@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter element:<input type="number" id="userip">
+    <button onclick="submitelement()">submit</button>
+
+    <button onclick="removeelement()">pop</button>
+    <button onclick="display()">display</button>
+
+    <script>
+        let elementarray=[];
+        function submitelement(){
+            let element=document.getElementById("userip").value;
+            for(let i=elementarray.length;i<elementarray.length+1;i++){
+                elementarray.splice(i,0,element)
+                break
+            }
+            console.log(elementarray)
+        }
+
+        function display(){
+            if(elementarray.length==0){
+                console.log("no elements")
+                
+            }
+            else{
+
+                console.log(elementarray)
+            }
+        }
+
+        function removeelement(){
+            for(let i=0;i<elementarray.length;i++){
+                elementarray.splice(i, 1); 
+                break
+
+            }
+            console.log(elementarray)
+        }
+        
+    </script>
+</body>
+</html>
